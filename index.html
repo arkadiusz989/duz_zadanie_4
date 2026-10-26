@@ -1,11 +1,52 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona na DUZ o sprzęcie sieciowym</title>
+    <title>Multimedia i figury</title>
 </head>
 <body>
+
+    <h1>Multimedia i figury</h1>
+
+    <h2>Film</h2>
+    <video width="320" height="240" controls>
+        <source src="film.mp4" type="video/mp4">
+    </video>
+
+    <h2>Muzyka</h2>
+    <audio controls>
+        <source src="muzyka.mp3" type="audio/mpeg">
+    </audio>
+
+    <h2>Rysowanie figur</h2>
+
+    <canvas id="rysunek" width="400" height="250"
+            style="border:1px solid black;">
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById("rysunek");
+        const ctx = canvas.getContext("2d");
+
+        // Niebieska linia przekątna
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(390, 240);
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        // Czerwony kwadrat
+        ctx.fillStyle = "red";
+        ctx.fillRect(40, 40, 70, 70);
+
+        // Żółte koło
+        ctx.beginPath();
+        ctx.arc(250, 100, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+    </script>
 
 </body>
 </html>
